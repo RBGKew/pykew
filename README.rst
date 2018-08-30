@@ -15,6 +15,7 @@ Searching
 Simple search:
 
 .. code-block:: python
+
     import pykew.ipni as ipni
 
     result = ipni.search('Poa annua')
@@ -22,6 +23,7 @@ Simple search:
 Advanced search:
 
 .. code-block:: python
+
     import pykew.ipni as ipni
     from pykew.ipni.terms import Name
 
@@ -31,11 +33,12 @@ Advanced search:
 Using results:
 
 .. code-block:: python
+
     import pykew.ipni as ipni
     from pykew.ipni.terms import Name
 
     query = { Name.genus: 'Poa', Name.species: 'annua' }
     res = ipni.search(query)
-
-		res.size() # 12
+    
+    res.size()
     [r['name'] for r in res if 'name' in r]
