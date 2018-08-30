@@ -2,7 +2,7 @@ import requests
 import time
 import urllib
 
-BASE_URL = 'http://localhost:28080/api/1'
+from .config import BASE_URL
 
 def _url(method, params = {}):
     return '{base}/{method}?{opt}'.format(base=BASE_URL, method=method, opt=urllib.parse.urlencode(params))
