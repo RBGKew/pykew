@@ -1,16 +1,16 @@
 import requests
 
 from .search_result import SearchResult
-from .search_result import __url__
+from .search_result import _url
 
 def search(query = None):
     return SearchResult(query)
 
 def lookup_name(id):
-    return requests.get(__url__('n/%s' % id)).json()
+    return requests.get(_url('n/' + id)).json()
 
 def lookup_author(id):
-    return requests.get(__url__('a/%s' % id)).json()
+    return requests.get(_url('a/' + id)).json()
 
 def lookup_publication(id):
-    return requests.get(__url__('p/%s' % id)).json()
+    return requests.get(_url('p/' + id)).json()
