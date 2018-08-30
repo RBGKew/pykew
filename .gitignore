@@ -1,2 +1,5 @@
 **/__pycache__/**
 .pytest_cache
+pykew.egg-info/
+dist/
+build/

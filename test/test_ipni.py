@@ -1,5 +1,5 @@
-import ipni
-from ipni.terms import Name, Author, Publication
+import pykew.ipni as ipni
+from pykew.ipni.terms import Name, Author, Publication
 
 def test_basic_search():
     res = ipni.search('Poa Annua')
