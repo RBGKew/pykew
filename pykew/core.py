@@ -2,14 +2,26 @@ import requests
 import time
 import urllib
 
-from .config import BASE_URL
+IPNI_URL = 'http://beta.ipni.org/api/1'
+POWO_URL = 'http://localhost:10080/api/2'
 
-def _url(method, params = {}):
-    return '{base}/{method}?{opt}'.format(base=BASE_URL, method=method, opt=urllib.parse.urlencode(params))
+class Api:
+    def __init__(self, url):
+        self._base_url = url
+
+    def _url(self, method, params):
+        return '{base}/{method}?{opt}'.format(
+                base=self._base_url,
+                method=method,
+                opt=urllib.parse.urlencode(params))
+
+    def get(self, method, params = {}):
+        return requests.get(self._url(method, params))
 
 class SearchResult:
-    def __init__(self, query = None):
+    def __init__(self, api, query = None):
         self._query = query
+        self._api = api
         self._cursor = "*"
         self._run_query()
 
@@ -28,7 +40,7 @@ class SearchResult:
 
     def _run_query(self):
         params = self._build_params()
-        response = requests.get(_url('search', params))
+        response = self._api.get('search', params)
         # wait a proportion of server response time of previous call
         # before making subsequent calls
         self._wait_time = response.elapsed.total_seconds() / 2.0
