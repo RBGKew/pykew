@@ -3,7 +3,7 @@ import time
 import urllib
 
 IPNI_URL = 'http://beta.ipni.org/api/1'
-POWO_URL = 'http://localhost:10080/api/2'
+POWO_URL = 'http://plantsoftheworld.online/api/2'
 
 class Api:
     def __init__(self, url):
