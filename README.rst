@@ -11,8 +11,8 @@ IPNI
 
 Module for searching IPNI data and looking up individual records. 
 
-Simple search:
-~~~~~~~~~~~~~~~~
+Simple search
+~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -20,8 +20,8 @@ Simple search:
 
     result = ipni.search('Poa annua')
 
-Advanced search:
-~~~~~~~~~~~~~~~~
+Advanced search
+~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -31,8 +31,8 @@ Advanced search:
     query = { Name.genus: 'Poa', Name.species: 'annua' }
     res = ipni.search(query)
 
-Using results:
-~~~~~~~~~~~~~~
+Using results
+~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -53,8 +53,8 @@ Module for searching POWO data and looking up individual records. Taxonomic data
 returned by default, but other associated such as distributions and descriptive text can
 also be retreived.
 
-Simple search:
-~~~~~~~~~~~~~~
+Simple search
+~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -62,23 +62,32 @@ Simple search:
 
     result = powo.search('Poa annua')
 
-Advanced search:
-~~~~~~~~~~~~~~~~
+Advanced search
+~~~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    import pykew.powo as ipni
+    import pykew.powo as powo
     from pykew.powo_terms import Name
 
     query = { Name.genus: 'Poa', Name.species: 'annua' }
     res = powo.search(query)
 
-Using results:
-~~~~~~~~~~~~~~
+Individual record
+~~~~~~~~~~~~~~~~~
+.. code-block:: python
+
+    import pykew.powo as powo
+
+    res = powo.lookup('urn:lsid:ipni.org:names:320035-2', include=['distribution'])
+    native_to = [d['name'] for d in res['distribution']['natives']]
+
+Using results
+~~~~~~~~~~~~~
 
 .. code-block:: python
 
-    import pykew.ipni as ipni
+    import pykew.powo as powo
     from pykew.powo_terms import Name, Geography
 
     query = { Name.genus: 'Poa', Geography.distribution: 'Africa' }
@@ -86,4 +95,3 @@ Using results:
     
     res.size()
     [r['name'] for r in res if 'name' in r]
-

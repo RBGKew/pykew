@@ -21,6 +21,11 @@ def test_advanced_geography_search():
     res = powo.search({Geography.distribution: 'Africa'})
     assert res.size() > 0
 
-def test_lookup_name():
-    res = powo.lookup_name('urn:lsid:ipni.org:names:320035-2')
+def test_lookup():
+    res = powo.lookup('urn:lsid:ipni.org:names:320035-2')
     assert res['name'] == 'Poa annua'
+
+def test_lookup_with_extra_fields():
+    res = powo.lookup('urn:lsid:ipni.org:names:320035-2', include=['distribution', 'descriptions'])
+    assert 'distribution' in res
+    assert 'descriptions' in res

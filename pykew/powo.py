@@ -5,5 +5,6 @@ API = Api(POWO_URL)
 def search(query = None):
     return SearchResult(API, query=query)
 
-def lookup_name(id):
-    return API.get('taxon/' + id).json()
+def lookup(id, include = None):
+    params = {'fields': ','.join(include)} if include else {}
+    return API.get('taxon/' + id, params).json()
