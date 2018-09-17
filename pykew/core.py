@@ -4,6 +4,7 @@ import urllib
 
 IPNI_URL = 'http://beta.ipni.org/api/1'
 POWO_URL = 'http://plantsoftheworld.online/api/2'
+KPL_URL = 'http://kewplantlist.org/api/v1'
 
 class Api:
     def __init__(self, url):
