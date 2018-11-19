@@ -5,6 +5,12 @@ pykew: Python library for accessing Kew's data services
 Library for easy access to Kew's nomenclatural and taxonomic services. Hides the
 intracacies of usign the HTTP API. 
 
+.. image:: https://travis-ci.com/RBGKew/pykew.svg?branch=master
+    :target: https://travis-ci.com/RBGKew/pykew
+
+.. image:: https://badge.fury.io/py/pykew.svg
+    :target: https://badge.fury.io/py/pykew
+
 ----
 IPNI
 ----
