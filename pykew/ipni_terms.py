@@ -29,7 +29,7 @@ class Name(Enum):
     version = "version"
 
 class Author(Enum):
-    forname = "author forename"
+    forename = "author forename"
     full_name = "author name"
     standard_form = "author std"
     surname = "author surname"
