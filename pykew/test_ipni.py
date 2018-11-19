@@ -14,11 +14,11 @@ def test_advanced_name_search():
 
 def test_advanced_author_search():
     res = ipni.search({Author.standard_form: 'L.'})
-    assert next(res)['id'] == '12653-1'
+    assert '12653-1' in [author['id'] for author in res]
 
 def test_advanced_publication_search():
     res = ipni.search({Publication.lc_number: 'QK91.S6'})
-    assert next(res)['id'] == '1071-2'
+    assert '1071-2' in [pub['id'] for pub in res]
 
 def test_lookup_name():
     res = ipni.lookup_name('320035-2')
