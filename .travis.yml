@@ -1,0 +1,15 @@
+language: python
+python:
+- '3.5'
+- pypy3.5
+install:
+- pip install pipenv
+- pipenv install
+script: pipenv run py.test
+deploy:
+  provider: pypi
+  user: kewbi
+  on:
+    tags: true
+  password:
+    secure: RJsGpdycLdEnPMMWphUOuF/1Gsf/2wZe1k2cWQZhFkwwsc8VR7iyQQD/HVUV60I39hcb9rFf6nSF03KVGOks4bFEC6MBKmMwq/ScPi/1g+cuOAHaoajIpE14PRA3A+3No5i9g4DZrd5UdxCv37ZKYmxagFdroyphPvB0QIByP9kzX32wEf/9wjzKiHrR3SSPUgo4a1s1DHv/r9MEP2mPYD52EoVAGtJFiIwgVItng54s9DgydIzSjkO0iydPIn/4Dcq428k0zKWJQ2bdhO6w7475iLfaN6ndbSJjPmUmPuHhnIYDSL+qYsWLscndnTc9B9EkvZI5/JH2uAN4r9Py+Zb2f9ZjjTepWDSA0/iCFsBPJaI67DdFhytseqeOGI7Rg6nkTLrgsR6eauzCeVyoLSCtv6NPT/ZfExLI1SXhZUyHr/mw/p0UZcSx2KQQYdT5pObVi7U0AoQb196W53Agcq4MhDfHJuowBs3h9vBSEOcXiObMsFnDjn0Ei4Ou9tAAZPNV9UiwUAOgrKdws1i4mVYHoximIZSgZ4NM2Zx2K9Cs2+VtEo5DRL7EqWRe+9+vcZ+9O9HabwUgtKi/HwudYNpfnMJnsogc1TbNjJOecvFqtW5I3KDM2jsJ/vhLvMAsSE+aKhGvTzcz6M57lJGEXvt2S8iNQRou+fraWGHyKmU=
