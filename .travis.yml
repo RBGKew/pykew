@@ -6,6 +6,7 @@ install:
 - pipenv install
 script: pipenv run py.test
 deploy:
+  skip_cleanup: true
   provider: pypi
   user: kewbi
   password:
