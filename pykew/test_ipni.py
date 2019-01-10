@@ -1,5 +1,5 @@
 from . import ipni
-from .terms import Name, Author, Publication, Filters
+from .ipni_terms import Name, Author, Publication, Filters
 
 def test_basic_search():
     res = ipni.search('Poa Annua')
