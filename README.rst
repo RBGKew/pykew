@@ -46,55 +46,55 @@ the modules ``Name``, ``Author``, and ``Publication``.
 ``Name``
 ========
 
-   * added
-   * author
-   * basionym
-   * basionym_author
-   * bibliographic_reference
-   * citation_type
-   * collection_number
-   * collectors
-   * distribution
-   * family
-   * full_name
-   * genus
-   * in_powo
-   * infrafamily
-   * infragenus
-   * infraspecies
-   * modified
-   * name_status
-   * published
-   * published_in
-   * publishing_author
-   * rank
-   * scientific_name
-   * species
-   * species_author
-   * version
+* added
+* author
+* basionym
+* basionym_author
+* bibliographic_reference
+* citation_type
+* collection_number
+* collectors
+* distribution
+* family
+* full_name
+* genus
+* in_powo
+* infrafamily
+* infragenus
+* infraspecies
+* modified
+* name_status
+* published
+* published_in
+* publishing_author
+* rank
+* scientific_name
+* species
+* species_author
+* version
 
 ``Author``
 ==========
 
-   * forename
-   * full_name
-   * standard_form
-   * surname
+* forename
+* full_name
+* standard_form
+* surname
 
 ``Publication``
 ===============
 
-   * standard_form
-   * bph_number
-   * date
-   * isbn
-   * issn
-   * lc_number
-   * preceded_by
-   * superceded_by
-   * title
-   * tl2_author
-   * tl2_number
+* standard_form
+* bph_number
+* date
+* isbn
+* issn
+* lc_number
+* preceded_by
+* superceded_by
+* title
+* tl2_author
+* tl2_number
 
 Filtering
 ~~~~~~~~~
@@ -114,12 +114,12 @@ Available Filters
 ``Filters``
 ===========
 
-   * familial
-   * infrafamilial
-   * generic
-   * infrageneric
-   * specific
-   * infraspecific
+* familial
+* infrafamilial
+* generic
+* infrageneric
+* specific
+* infraspecific
 
 
 Using results
@@ -175,31 +175,33 @@ the modules ``Name``, ``Characteristic``, and ``Geography``.
 
 ``Name``
 ========
-   * full_name
-   * common_name
-   * kingdom
-   * family
-   * genus
-   * species
-   * author
+
+* full_name
+* common_name
+* kingdom
+* family
+* genus
+* species
+* author
 
 ``Characteristic``
 ==================
-   * summary
-   * appearance
-   * characteristic
-   * flower
-   * fruit
-   * leaf
-   * inflorescence
-   * seed
-   * cloning
-   * use
+
+* summary
+* appearance
+* characteristic
+* flower
+* fruit
+* leaf
+* inflorescence
+* seed
+* cloning
+* use
 
 ``Geography``
 =============
 
-   * distribution
+* distribution
 
 Filtering
 ~~~~~~~~~
@@ -218,12 +220,13 @@ Available Filters
 
 ``Filters``
 ===========
-   * accepted
-   * has_images
-   * families
-   * genera
-   * species
-   * infraspecies
+
+* accepted
+* has_images
+* families
+* genera
+* species
+* infraspecies
 
 Individual record
 ~~~~~~~~~~~~~~~~~
