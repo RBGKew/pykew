@@ -20,8 +20,9 @@ class Api:
         return requests.get(self._url(method, params))
 
 class SearchResult:
-    def __init__(self, api, query = None):
+    def __init__(self, api, query, filters = None):
         self._query = query
+        self._filters = filters
         self._api = api
         self._cursor = "*"
         self._run_query()
@@ -30,6 +31,8 @@ class SearchResult:
         params = {'perPage': 500, 'cursor': self._cursor}
         if self._query:
             params['q'] = self._format_query()
+        if self._filters:
+            params['f'] = self._format_filters()
         return params
 
     def _format_query(self):
@@ -38,6 +41,13 @@ class SearchResult:
             return ",".join(terms)
         else:
             return self._query
+
+    def _format_filters(self):
+        if isinstance(self._filters, list):
+            terms = [f.value for f in self._filters]
+            return ",".join(terms)
+        else:
+            return self._filters.value
 
     def _run_query(self):
         params = self._build_params()

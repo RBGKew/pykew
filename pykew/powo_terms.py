@@ -23,3 +23,11 @@ class Characteristic(Enum):
 
 class Geography(Enum):
     distribution = "location"
+
+class Filters(Enum):
+    accepted = "accepted_names"
+    has_images = "has_images"
+    families = "families_f"
+    genera = "genus_f"
+    species = "species_f"
+    infraspecies = "infraspecific_f"

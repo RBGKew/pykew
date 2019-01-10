@@ -2,8 +2,8 @@ from .core import Api, IPNI_URL, SearchResult
 
 API = Api(IPNI_URL)
 
-def search(query = None):
-    return SearchResult(API, query=query)
+def search(query, filters = None):
+    return SearchResult(API, query, filters=filters)
 
 def lookup_name(id):
     return API.get('n/' + id).json()

@@ -1,5 +1,5 @@
 from . import ipni
-from .terms import Name, Author, Publication
+from .terms import Name, Author, Publication, Filters
 
 def test_basic_search():
     res = ipni.search('Poa Annua')
@@ -31,3 +31,50 @@ def test_lookup_publication():
 def test_lookup_author():
     res = ipni.lookup_author('12653-1')
     assert res['standardForm'] == 'L.'
+
+def test_filter_by_family():
+    q = { Name.family: 'Poaceae' }
+    f = Filters.familial
+    filtered = ipni.search(query = q, filters = f)
+
+    assert filtered.size() == 1
+
+def test_filter_by_infrafamily():
+    q = { Name.family: 'Poaceae' }
+    f = Filters.infrafamilial
+    unfiltered = ipni.search(query = q)
+    filtered = ipni.search(query = q, filters = f)
+
+    assert filtered.size() < unfiltered.size()
+
+def test_filter_by_generic():
+    q = { Name.family: 'Poaceae' }
+    f = Filters.generic
+    unfiltered = ipni.search(query = q)
+    filtered = ipni.search(query = q, filters = f)
+
+    assert filtered.size() < unfiltered.size()
+
+def test_filter_by_infrageneric():
+    q = { Name.family: 'Poaceae' }
+    f = Filters.infrageneric
+    unfiltered = ipni.search(query = q)
+    filtered = ipni.search(query = q, filters = f)
+
+    assert filtered.size() < unfiltered.size()
+
+def test_filter_by_specific():
+    q = { Name.family: 'Poaceae' }
+    f = Filters.specific
+    unfiltered = ipni.search(query = q)
+    filtered = ipni.search(query = q, filters = f)
+
+    assert filtered.size() < unfiltered.size()
+
+def test_filter_by_infraspecific():
+    q = { Name.family: 'Poaceae' }
+    f = Filters.infraspecific
+    unfiltered = ipni.search(query = q)
+    filtered = ipni.search(query = q, filters = f)
+
+    assert filtered.size() < unfiltered.size()

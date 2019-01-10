@@ -46,3 +46,11 @@ class Publication(Enum):
     title = "publication title"
     tl2_author = "tl2 author"
     tl2_number = "tl2 number"
+
+class Filters(Enum):
+    familial = "f_familial"
+    infrafamilial = "f_infrafamilial"
+    generic = "f_generic"
+    infrageneric = "f_infrageneric"
+    specific = "f_specific"
+    infraspecific = "f_infraspecific"
