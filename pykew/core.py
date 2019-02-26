@@ -17,7 +17,11 @@ class Api:
                 opt=urllib.parse.urlencode(params))
 
     def get(self, method, params = {}):
-        return requests.get(self._url(method, params))
+        resp = requests.get(self._url(method, params))
+        if resp.status_code == 249: # too many requests, retry after 5 sec
+            time.sleep(5)
+            return self.get(method, params)
+        return resp
 
 class SearchResult:
     def __init__(self, api, query, filters = None):
