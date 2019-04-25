@@ -3,7 +3,7 @@ from .powo_terms import Name, Characteristic, Geography, Filters
 
 def test_basic_search():
     res = powo.search('Poa Annua')
-    assert res.size() == 2
+    assert res.size() >= 2
     assert next(res)['fqId'] == 'urn:lsid:ipni.org:names:320035-2'
 
 def test_advanced_name_search():
