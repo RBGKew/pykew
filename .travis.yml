@@ -5,3 +5,10 @@ install:
 - pip install pipenv
 - pipenv install
 script: pipenv run py.test
+deploy:
+  provider: pypi
+  user: kewbi
+  password:
+    secure: mNTVt6EAuryJANVgCoEIZbLVY9/hNrD7SyaRGLfvj4gBGtIMWwgjdHn/FdJzPgs+e2uh2HfP/EPQMpbX9qKDof93kXfVf2RDLmuChYG4R8PiapSwUyDv/jXSTB3pxldNn/Rmu+aLeh3CrKc4/+iI2NBNtZGQrsSv3hh5WZ76uC8NRxkB5UzjemteSP1kofxFrTl+ptF2mw2xY6xKK14+IcgKsXCYBhuMfP19VI/bdlg6iAY+4PuQBGcBU0mMIp6AwU8iI8HXOEcwpnb0oAa6/UYx5Rzii8JjgPSevvtTquTB9lh+ZIQC1ALShlpKGjvBUJ81+ctlptGACuf7af9iVMeoh5nBj1GstUoelVCF/8frLYdHAwXOu4iw8zdclwfXfCmXhvwEmL0YXL3LkwKdnujyKyx/TQUvy79AHaGvE71lrdAulEQ8JD9+L2+boYLBJYnGoqqJz5HvRmQIha1eWYnn0fXn6qtbxRbfplb1eJCkzoflXa2QFtqq5dTC/1DTi2Se/1AHe/4AWW1uK936HGH9lybmpHa9ZgJLttedoCkR1i3+Z8zAi9d3KuHozT7knwQHNVM8c2pEgCYRr/lF2HyR9rBPwnQhCONgyhmF8ofbr5fKfyHHYajgZbXRFo7HRqdkbCM8MBIG1vOjApA5GE4lfMo35zTFzJb8wfnQvX0=
+  on:
+    tags: true
