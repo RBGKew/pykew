@@ -24,15 +24,16 @@ class Api:
         return resp
 
 class SearchResult:
-    def __init__(self, api, query, filters = None):
+    def __init__(self, api, query, filters=None, page_number=0):
         self._query = query
         self._filters = filters
+        self.page_number = page_number
         self._api = api
         self._cursor = "*"
         self._run_query()
 
     def _build_params(self):
-        params = {'perPage': 500, 'cursor': self._cursor}
+        params = {'perPage': 500, 'cursor': self._cursor,'p':self.page_number}
         if self._query:
             params['q'] = self._format_query()
         if self._filters:
